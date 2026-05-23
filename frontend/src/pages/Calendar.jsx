@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Plus, Trash2, CheckCircle2, Sparkles, ChevronLeft, ChevronRight, Clock, Tag } from 'lucide-react';
-
-const API = 'http://localhost:5000/api';
+import { API } from '../config';
 
 const CATEGORIES = {
   work:     { label: 'Work',     color: '#6366f1', bg: '#6366f111' },

@@ -5,8 +5,7 @@ import {
   ChevronLeft, ChevronRight, Send, Bot, User,
   Lightbulb, ListChecks, HelpCircle, Tag
 } from 'lucide-react';
-
-const API = 'http://localhost:5000/api';
+import { API } from '../config';
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);

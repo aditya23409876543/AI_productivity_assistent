@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Target, Search, Bell, MapPin } from 'lucide-react';
+import { API } from '../config';
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/tasks')
+    axios.get(`${API}/tasks`)
       .then(res => { setTasks(res.data); setLoading(false); })
       .catch(err => { console.error(err); setLoading(false); });
   }, []);

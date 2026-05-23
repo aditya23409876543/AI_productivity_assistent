@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Send, Bot, User, Plus, Trash2, MessageSquare, ChevronLeft, ChevronRight } from 'lucide-react';
-
-const API = 'http://localhost:5000/api';
+import { API } from '../config';
 const WELCOME = 'Your AI Assistant is here! How can I help you today?';
 
 export default function AIChat() {

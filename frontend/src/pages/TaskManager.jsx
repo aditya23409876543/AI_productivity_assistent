@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Plus, CheckCircle2, Sparkles, Trash2, CalendarDays, Clock } from 'lucide-react';
-
-const API = 'http://localhost:5000/api';
+import { API } from '../config';
 
 const toDateStr = (d) => d.toISOString().split('T')[0];
 

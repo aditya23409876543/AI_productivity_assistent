@@ -6,9 +6,13 @@ node_modules/
 # Environment variables — NEVER commit secrets
 .env
 .env.local
+.env.development
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Vercel
+.vercel
 
 # Build output
 dist/
