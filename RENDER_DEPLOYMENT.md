@@ -26,10 +26,8 @@ When setting up your service, configure the following fields:
 * **Name:** `ai-productivity-assistant-backend` (or your preferred name)
 * **Region:** Choose the region closest to your users (e.g., `Oregon (US West)` or `Frankfurt (EU Central)`)
 * **Branch:** `main` (or your active branch)
-* **Root Directory:** `backend` 
-  > [!IMPORTANT]
-  > Setting **Root Directory** to `backend` ensures that Render looks for the `Dockerfile` and dependencies directly inside the `backend` directory, rather than the project root.
-* **Runtime:** `Docker` (Render will automatically detect this once the root directory is set)
+* **Root Directory:** Leave blank (or keep as `.` default). Render will automatically find the `Dockerfile` at the root of the repository.
+* **Runtime:** `Docker` (Render will automatically detect this since the Dockerfile is in the root directory)
 
 ### 3. Add Environment Variables
 Scroll down to the **Environment Variables** section and add the following keys:
