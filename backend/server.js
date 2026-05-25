@@ -75,8 +75,8 @@ app.get('/', (req, res) => {
   res.json({ status: 'AI Productivity Assistant API is running' });
 });
 
-// ── Start server (only when running locally, NOT in serverless) ──
-if (process.env.NODE_ENV !== 'production' && require.main === module) {
+// ── Start server when run directly (local dev or container environments like Render) ──
+if (require.main === module) {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
