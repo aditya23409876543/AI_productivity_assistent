@@ -16,13 +16,19 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
-  process.env.FRONTEND_URL, // set this in Vercel env vars to your Vercel domain
+  'https://ai-productivity-assistent.vercel.app',
+  process.env.FRONTEND_URL, // set this in Render env vars to your custom domain
 ].filter(Boolean);
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (curl, Postman, same-origin serverless)
-    if (!origin || allowedOrigins.some(o => origin.startsWith(o))) {
+    // Allow requests with no origin (curl, Postman, server-to-server)
+    if (!origin) return callback(null, true);
+    
+    const isAllowed = allowedOrigins.some(o => origin.startsWith(o)) || 
+                      origin.endsWith('.vercel.app');
+                      
+    if (isAllowed) {
       return callback(null, true);
     }
     callback(new Error('Not allowed by CORS'));
